@@ -1,32 +1,25 @@
-# Data Model: Generative AI Daily Review Companion
+# Data Model for Generative AI Daily Review Companion
 
 ## Entities
 
 ### User
-- userId: string
-- name: string
-- commuteSchedule: object
-- reviewHistory: array of ReviewSession
+- Attributes: userId, name, commuteSchedule, reviewHistory
+- Relationships: Has many ReviewSessions
 
 ### ReviewSession
-- sessionId: string
-- userId: string
-- date: datetime
-- stepsCompleted: array of string
-- notes: string
-- interruptions: array of string
+- Attributes: sessionId, userId, date, stepsCompleted, notes, interruptions
+- Relationships: Belongs to User; Has many ConversationLogs
 
 ### ConversationLog
-- logId: string
-- sessionId: string
-- transcript: string
-- timestamps: array of datetime
-- privacyStatus: string
+- Attributes: logId, sessionId, transcript, timestamps, privacyStatus
+- Relationships: Belongs to ReviewSession
 
-## Relationships
-- User has many ReviewSessions
-- ReviewSession has one ConversationLog
+## Validation Rules
+- User must have a unique userId
+- ReviewSession must be linked to a valid User
+- ConversationLog must be linked to a valid ReviewSession
+- PrivacyStatus must comply with retention/deletion policy [NEEDS CLARIFICATION]
 
-## Notes
-- Data model supports privacy, voice interaction, and review tracking.
-- Extendable for additional features (e.g., reminders, analytics).
+## State Transitions
+- ReviewSession: Created → InProgress → Completed → Interrupted
+- ConversationLog: Created → Updated → Archived

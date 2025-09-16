@@ -1,24 +1,34 @@
-# Research: .NET MAUI for Generative AI Daily Review Companion
+# Research for Generative AI Daily Review Companion
 
-## Platform Suitability
-- .NET MAUI enables cross-platform development (Windows, macOS, iOS, Android) with a single codebase.
-- Supports native UI, device APIs (microphone, speech), and background tasks.
-- Integrates with C# libraries for AI, voice, and cloud services.
+## Unknowns & Research Tasks
 
-## Generative AI Integration
-- .NET MAUI can call cloud-based AI APIs (OpenAI, AWS, Azure, etc.) via REST or SDKs.
-- Local inference possible with ONNX, but cloud APIs recommended for affordability and scalability.
-- Voice interaction supported via platform speech APIs or third-party libraries.
+### Speech Recognition Library
+- Task: Research best speech recognition libraries for .NET MAUI cross-platform apps
 
-## Hosting Flexibility
-- App runs locally on user devices (phone, desktop, tablet).
-- Backend (if needed) can be hosted on AWS, Azure, or any affordable platform; can also run locally.
-- No vendor lock-in; user can choose hosting based on cost and expertise.
+### Storage Provider
+- Task: Research affordable, privacy-respecting storage providers for voice and review data
 
-## Constraints & Dependencies
-- Requires internet for cloud AI services.
-- Privacy: Voice data and review logs must be protected; retention/deletion policy needed.
-- Safety: Hands-free operation and minimal distraction are critical for driving scenarios.
+### Multi-user Support
+- Task: Research design patterns for multi-user support in cross-platform review apps
+
+## Findings
+
+### Speech Recognition Library
+- Decision: [NEEDS CLARIFICATION]
+- Rationale: .NET MAUI supports plugins, but cross-platform speech recognition may require platform-specific code or third-party libraries. Evaluate options like Microsoft Speech SDK, Plugin.SpeechRecognition, or custom wrappers.
+- Alternatives considered: Native platform APIs, third-party plugins, cloud-based recognition (OpenAI Whisper, AWS Transcribe)
+
+### Storage Provider
+- Decision: [NEEDS CLARIFICATION]
+- Rationale: Local file system is simplest for privacy, but cloud options (AWS S3, Azure Blob) offer scalability. Consider cost, privacy, and offline capability.
+- Alternatives considered: Local SQLite, encrypted files, cloud storage providers
+
+### Multi-user Support
+- Decision: [NEEDS CLARIFICATION]
+- Rationale: Single-user is default, but scalable design may require user authentication and data partitioning. Evaluate .NET Identity, custom user management, or third-party auth providers.
+- Alternatives considered: No multi-user, built-in .NET Identity, external auth providers
+
+---
 
 ## Summary
-.NET MAUI is well-suited for building a generative AI companion app with voice interaction, cross-platform support, and flexible hosting. All requirements from the feature spec can be met using .NET MAUI and affordable cloud or local hosting options.
+All major unknowns are documented. Further research and stakeholder input required to finalize decisions.

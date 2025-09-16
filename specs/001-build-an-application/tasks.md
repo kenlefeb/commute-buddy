@@ -1,12 +1,12 @@
 # Tasks: Generative AI Daily Review Companion
 
 **Input**: Design documents from `/specs/001-build-an-application/`
-**Prerequisites**: plan.md (required), research.md, data-model.md, contracts/
+**Prerequisites**: plan.md (required), research.md, data-model.md
 
 ## Execution Flow (main)
 ```
 1. Load plan.md from feature directory
-2. Load optional design documents: data-model.md, contracts/, research.md, quickstart.md
+2. Load optional design documents: data-model.md, research.md, quickstart.md
 3. Generate tasks by category: Setup, Tests, Core, Integration, Polish
 4. Apply task rules: [P] for parallel, sequential for same file
 5. Number tasks sequentially (T001, T002...)
@@ -16,64 +16,65 @@
 9. Return: SUCCESS (tasks ready for execution)
 ```
 
-## Phase 1: Setup
-- [ ] T001 Create .NET MAUI project structure in `src/`
-- [ ] T002 Initialize .NET MAUI project with dependencies in `src/`
-- [ ] T003 [P] Configure linting and formatting tools in `src/`
+## Phase 3.1: Setup
+- [ ] T001 Create project structure per implementation plan (app/, core/, api/, cli/, lib/, tests/) in repo root
+- [ ] T002 Initialize .NET MAUI project in app/ and supporting .NET libraries in core/, api/, cli/
+- [ ] T003 [P] Configure linting and formatting tools for .NET (e.g., dotnet-format) in all projects
 
-## Phase 2: Tests First (TDD)
-- [ ] T004 [P] Contract test for API endpoints in `tests/contract/test_api_endpoints.cs`
-- [ ] T005 [P] Contract test for voice interaction in `tests/contract/test_voice_interaction.cs`
-- [ ] T006 [P] Contract test for review session workflow in `tests/contract/test_review_session.cs`
-- [ ] T007 [P] Model test for User entity in `tests/model/test_user.cs`
-- [ ] T008 [P] Model test for ReviewSession entity in `tests/model/test_review_session.cs`
-- [ ] T009 [P] Model test for ConversationLog entity in `tests/model/test_conversation_log.cs`
-- [ ] T010 [P] Integration test for Daily Review user story in `tests/integration/test_daily_review.cs`
+## Phase 3.2: Tests First (TDD)
+**CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
+- [ ] T004 [P] Contract test for ReviewSession model in tests/contract/test_review_session.cs
+- [ ] T005 [P] Contract test for User model in tests/contract/test_user.cs
+- [ ] T006 [P] Contract test for ConversationLog model in tests/contract/test_conversation_log.cs
+- [ ] T007 [P] Integration test for Daily Review flow in tests/integration/test_daily_review_flow.cs
+- [ ] T008 [P] Integration test for hands-free voice interaction in tests/integration/test_voice_interaction.cs
+- [ ] T009 [P] Integration test for review session summary and storage in tests/integration/test_review_storage.cs
 
-## Phase 3: Core Implementation
-- [ ] T011 [P] Implement User model in `src/models/User.cs`
-- [ ] T012 [P] Implement ReviewSession model in `src/models/ReviewSession.cs`
-- [ ] T013 [P] Implement ConversationLog model in `src/models/ConversationLog.cs`
-- [ ] T014 Implement ReviewSession service in `src/services/ReviewSessionService.cs`
-- [ ] T015 Implement ConversationLog service in `src/services/ConversationLogService.cs`
-- [ ] T016 Implement API endpoints in `src/api/ReviewSessionApi.cs`
-- [ ] T017 Implement voice interaction logic in `src/voice/VoiceInteraction.cs`
-- [ ] T018 Implement review session workflow in `src/workflows/ReviewSessionWorkflow.cs`
+## Phase 3.3: Core Implementation (ONLY after tests are failing)
+- [ ] T010 [P] Implement User model in core/models/User.cs
+- [ ] T011 [P] Implement ReviewSession model in core/models/ReviewSession.cs
+- [ ] T012 [P] Implement ConversationLog model in core/models/ConversationLog.cs
+- [ ] T013 Implement Review logic service in core/services/ReviewService.cs
+- [ ] T014 Implement voice interaction service in core/services/VoiceService.cs
+- [ ] T015 Implement review summary and storage logic in core/services/StorageService.cs
 
-## Phase 4: Integration
-- [ ] T019 Integrate generative AI API in `src/ai/GenerativeAiService.cs`
-- [ ] T020 Integrate platform speech APIs in `src/voice/SpeechApiIntegration.cs`
-- [ ] T021 Connect services to local/cloud backend in `src/backend/BackendIntegration.cs`
-- [ ] T022 Implement privacy controls in `src/privacy/PrivacyService.cs`
+## Phase 3.4: Integration
+- [ ] T016 Integrate ReviewService with VoiceService in core/services/
+- [ ] T017 Integrate StorageService with local and cloud providers in core/services/
+- [ ] T018 Implement privacy and data retention options in core/services/StorageService.cs
+- [ ] T019 Implement logging and error handling in all services
 
-## Phase 5: Polish
-- [ ] T023 [P] Unit tests for privacy and safety in `tests/unit/test_privacy_safety.cs`
-- [ ] T024 [P] Performance tests in `tests/performance/test_performance.cs`
-- [ ] T025 [P] Update documentation in `specs/001-build-an-application/quickstart.md`
-- [ ] T026 Manual testing and stakeholder review in `specs/001-build-an-application/manual-testing.md`
-
-## Parallel Execution Example
-```
-# Launch T004-T010 together:
-Task: "Contract test for API endpoints in tests/contract/test_api_endpoints.cs"
-Task: "Contract test for voice interaction in tests/contract/test_voice_interaction.cs"
-Task: "Contract test for review session workflow in tests/contract/test_review_session.cs"
-Task: "Model test for User entity in tests/model/test_user.cs"
-Task: "Model test for ReviewSession entity in tests/model/test_review_session.cs"
-Task: "Model test for ConversationLog entity in tests/model/test_conversation_log.cs"
-Task: "Integration test for Daily Review user story in tests/integration/test_daily_review.cs"
-```
+## Phase 3.5: Polish
+- [ ] T020 [P] Unit tests for all models and services in tests/unit/
+- [ ] T021 [P] Performance tests for voice response and resource usage in tests/performance/
+- [ ] T022 [P] Update documentation in specs/001-build-an-application/quickstart.md and README.md
+- [ ] T023 Manual testing following quickstart.md
 
 ## Dependencies
 - Setup (T001-T003) before everything
-- Tests (T004-T010) before implementation (T011-T018)
-- Models (T011-T013) before services (T014-T015)
-- Services before endpoints and workflows (T016-T018)
-- Core before integration (T019-T022)
-- Everything before polish (T023-T026)
+- Tests (T004-T009) before implementation (T010-T015)
+- Models (T010-T012) before services (T013-T015)
+- Services before integration (T016-T019)
+- Implementation before polish (T020-T023)
+
+## Parallel Example
+```
+# Launch T004-T009 together:
+Task: "Contract test for ReviewSession model in tests/contract/test_review_session.cs"
+Task: "Contract test for User model in tests/contract/test_user.cs"
+Task: "Contract test for ConversationLog model in tests/contract/test_conversation_log.cs"
+Task: "Integration test for Daily Review flow in tests/integration/test_daily_review_flow.cs"
+Task: "Integration test for hands-free voice interaction in tests/integration/test_voice_interaction.cs"
+Task: "Integration test for review session summary and storage in tests/integration/test_review_storage.cs"
+```
+
+## Notes
+- [P] tasks = different files, no dependencies
+- Verify tests fail before implementing
+- Commit after each task
+- Avoid: vague tasks, same file conflicts
 
 ## Validation Checklist
-- [x] All contracts have corresponding tests
 - [x] All entities have model tasks
 - [x] All tests come before implementation
 - [x] Parallel tasks truly independent
