@@ -17,18 +17,18 @@
 ```
 
 ## Phase 3.1: Setup
-- [ ] T001 Create project structure per implementation plan (app/, core/, api/, cli/, lib/, tests/) in repo root
-- [ ] T002 Initialize .NET MAUI project in app/ and supporting .NET libraries in core/, api/, cli/
-- [ ] T003 [P] Configure linting and formatting tools for .NET (e.g., dotnet-format) in all projects
+- [x] T001 Create project structure per implementation plan (app/, core/, api/, cli/, lib/, tests/) in repo root
+- [x] T002 Initialize .NET MAUI project in app/ and supporting .NET libraries in core/, api/, cli/
+- [x] T003 [P] Configure linting and formatting tools for .NET (e.g., dotnet-format) in all projects
 
 ## Phase 3.2: Tests First (TDD)
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
-- [ ] T004 [P] Contract test for ReviewSession model in tests/contract/test_review_session.cs
-- [ ] T005 [P] Contract test for User model in tests/contract/test_user.cs
-- [ ] T006 [P] Contract test for ConversationLog model in tests/contract/test_conversation_log.cs
-- [ ] T007 [P] Integration test for Daily Review flow in tests/integration/test_daily_review_flow.cs
-- [ ] T008 [P] Integration test for hands-free voice interaction in tests/integration/test_voice_interaction.cs
-- [ ] T009 [P] Integration test for review session summary and storage in tests/integration/test_review_storage.cs
+- [x] T004 [P] Contract test for ReviewSession model in tests/contract/test_review_session.cs
+- [x] T005 [P] Contract test for User model in tests/contract/test_user.cs
+- [x] T006 [P] Contract test for ConversationLog model in tests/contract/test_conversation_log.cs
+- [x] T007 [P] Integration test for Daily Review flow in tests/integration/test_daily_review_flow.cs
+- [x] T008 [P] Integration test for hands-free voice interaction in tests/integration/test_voice_interaction.cs
+- [x] T009 [P] Integration test for review session summary and storage in tests/integration/test_review_storage.cs
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
 - [ ] T010 [P] Implement User model in core/models/User.cs

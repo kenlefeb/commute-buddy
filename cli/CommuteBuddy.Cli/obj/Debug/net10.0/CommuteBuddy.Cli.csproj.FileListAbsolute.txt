@@ -1,0 +1,15 @@
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\bin\Debug\net10.0\CommuteBuddy.Cli.exe
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\bin\Debug\net10.0\CommuteBuddy.Cli.deps.json
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\bin\Debug\net10.0\CommuteBuddy.Cli.runtimeconfig.json
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\bin\Debug\net10.0\CommuteBuddy.Cli.dll
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\bin\Debug\net10.0\CommuteBuddy.Cli.pdb
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.AssemblyInfoInputs.cache
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.AssemblyInfo.cs
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.csproj.CoreCompileInputs.cache
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.sourcelink.json
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.dll
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\refint\CommuteBuddy.Cli.dll
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.pdb
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\CommuteBuddy.Cli.genruntimeconfig.cache
+D:\dev\src\github.com\kenlefeb\commute-buddy\cli\CommuteBuddy.Cli\obj\Debug\net10.0\ref\CommuteBuddy.Cli.dll
